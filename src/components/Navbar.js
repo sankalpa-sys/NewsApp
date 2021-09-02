@@ -1,15 +1,21 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import '../stylesheets/Navbar.css'
 
 export default class Navbar extends Component {
+  myStyle ={
+    fontWeight: "bold",
+    color: "red",
+    fontFamily: "fantasy"
+  }
   render() {
     return (
       <div>
         <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
           <div className="container-fluid">
-            <Link className="navbar-brand" to="/">
+            <NavLink className="navbar-brand" to="/">
               KHaBaRia
-            </Link>
+            </NavLink>
             <button
               className="navbar-toggler"
               type="button"
@@ -27,40 +33,57 @@ export default class Navbar extends Component {
             >
               <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                 <li className="nav-item">
-                  <Link className="nav-link" aria-current="page" to="/">
+                  <NavLink
+                    className="nav-link"
+                    aria-current="page"
+                    to="/"
+                    exact={true}
+                    activeClassName="selected"
+                    activeStyle={this.myStyle}
+                  >
                     General
-                  </Link>
+                  </NavLink>
                 </li>
-                
+
                 <li className="nav-item">
-                  <Link className="nav-link" to="/business">
+                  <NavLink
+                    className="nav-link"
+                    to="/business"
+                    activeClassName="selected"
+                    activeStyle={this.myStyle}
+                  >
                     Business
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className={"nav-link"} to="/entertainment">
+                  <NavLink className={"nav-link"} to="/entertainment" activeClassName="selected"
+                    activeStyle={this.myStyle}>
                     Entertainment
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/health">
+                  <NavLink className="nav-link" to="/health" activeClassName="selected"
+                    activeStyle={this.myStyle}>
                     Health
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/science">
+                  <NavLink className="nav-link" to="/science" activeClassName="selected"
+                    activeStyle={this.myStyle}>
                     Science
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="sports/">
+                  <NavLink className="nav-link" to="/sports" activeClassName="selected"
+                    activeStyle={this.myStyle}>
                     Sports
-                  </Link>
+                  </NavLink>
                 </li>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/technology">
+                  <NavLink className="nav-link" to="/technology" activeClassName="selected"
+                    activeStyle={this.myStyle}>
                     Technology
-                  </Link>
+                  </NavLink>
                 </li>
               </ul>
             </div>

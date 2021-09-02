@@ -1,4 +1,6 @@
 import React, { Component } from "react";
+import Button from '@material-ui/core/Button';
+
 
 export default class NewsItem extends Component {
   render() {
@@ -23,13 +25,9 @@ export default class NewsItem extends Component {
                   {new Date(date).toGMTString()}
                 </small>
               </p>
-              <a
-                href={NewsUrl}
-                target="_blank"
-                className="btn btn-sm" style={{borderRadius:"30px",backgroundColor:"#50AE2F", color:"white"}}
-              >
+              <Button size="small" variant="contained" color="secondary" href={NewsUrl} target ="_blank">
                 Read More
-              </a>
+              </Button>
             </div>
           </div>
         </div>
